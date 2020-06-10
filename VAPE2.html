@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VAPE</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Style the header */
+    header {
+        background-color: #666;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        color: white;
+    }
+    /* Create two columns/boxes that floats next to each other */
+    nav {
+        float: left;
+        width: 30%;
+        background: #ccc;
+        padding: 20px;
+    }
+
+    /* Style the list inside the menu */
+    nav ul {
+        list-style-type: none;
+        padding: 0px;
+    }
+
+    button{
+        background-color: white;
+        color: black;
+        padding: 5px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border: 2px solid #666666;
+        width: 300px;
+        height: 100px;
+    }
+    div{
+        padding: 20px;
+        float: left;
+    }
+
+    button:hover {
+        background-color: #666666;
+    }
+
+    article {
+        float: left;
+        padding: 20px;
+        width: 70%;
+    }
+
+    /* Clear floats after the columns */
+    section:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Style the footer */
+    footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+
+    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+    @media (max-width: 600px) {
+        nav, article {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+<body>
+
+<header>
+    <h2>VAPE</h2>
+</header>
+
+<section>
+    <nav>
+        <div class="dropdown">
+            <ul class="dropdown-content">
+                <li> <button id="MSA" onclick="MultiSequenceAlignment()">MultiSequenceAlignment</button></li>
+                <li> <button id="RMSD" onclick="RMSD()">RMSD</button></li>
+                <li> <button id="HeatMap" onclick="HeatMap()">Heat Map</button></li>
+                <li> <button id="STRIDE" onclick="STRIDE()">STRIDE</button></li>
+                <li> <button id="Ramachandran" onclick="Ramachandran()">Ramachandran</button></li>
+                <li> <button id="2DProjektion" onclick="Projektion()">2D Projektion</button></li>
+                <li> <button id="ParalleleKoordinaten" onclick="ParalleleKoordinaten()">Parallele Koordinaten</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article id="article">
+        <h1 id="articleh1">Visuelle Analyse von Protein Ensembles</h1>
+         <p id="articleP">Die Visualisierung (bio-)molekularer Daten, beispielsweise von Proteinen oder DNA, ist sowohl
+             für die Datenanalyse als auch für die Präsentation von Forschungsergebnissen und in der Lehre
+             weit verbreitet.<br>
+             Neben dreidimensionalen Darstellungen der Molekülstruktur haben sich auch
+             abstrakte, meist zweidimensionale Darstellungen etabliert, welche bestimmte Eigenschaften
+             der betrachteten Moleküle zeigen.
+         </p>
+    </article>
+
+    <div>
+        <p>Datei 1</p>
+        <form action = "http://localhost:5000/uploader" method = "POST"
+              enctype = "multipart/form-data">
+            <input type = "file" name = "file 1" />
+            <input type = "submit"/>
+        </form>
+        <p>Datei 2</p>
+        <form action = "http://localhost:5000/uploader" method = "POST"
+              enctype = "multipart/form-data">
+            <input type = "file" name = "file 2" />
+            <input type = "submit"/>
+        </form>
+    </div>
+
+
+</section>
+
+<footer>
+    <p>Footer</p>
+</footer>
+<script>
+    function MultiSequenceAlignment(){
+        document.getElementById("articleh1").innerHTML = "Multi Sequence Alignment";
+        document.getElementById("articleP").innerHTML = "";
+    }
+    function RMSD() {
+        var RMSD = document.getElementById("articleh1");
+        RMSD.innerHTML = "RMSD";
+        document.getElementById("articleP").innerHTML = "";
+    }
+    function HeatMap() {
+        document.getElementById("articleh1").innerHTML = "Heat Map";
+        document.getElementById("articleP").innerHTML = "";
+    }
+    function STRIDE() {
+        document.getElementById("articleh1").innerHTML = "STRIDE";
+        document.getElementById("articleP").innerHTML = "";
+    }
+    function Ramachandran() {
+        document.getElementById("articleh1").innerHTML = "Ramachandran";
+        document.getElementById("articleP").innerHTML = "";
+    }
+    function Projektion() {
+        document.getElementById("articleh1").innerHTML = "2D Projektion";
+        document.getElementById("articleP").innerHTML = "";
+    }
+    function ParalleleKoordinaten() {
+        document.getElementById("articleh1").innerHTML = "Parallele Koordinaten";
+        document.getElementById("articleP").innerHTML = "";
+    }
+
+</script>
+
+
+</body>
+</html>
